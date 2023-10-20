@@ -46,21 +46,27 @@ for (let i = 0; i < images.length; i++) {
 }
 
   
-const itemDOMElements = document.querySelectorAll(".carousel-item");
+const imgDOMElements = document.querySelectorAll(".carousel-item");
+const titleDOMElements = document.querySelectorAll(".title-slide")
+const textDOMElements = document.querySelectorAll(".text-slide");
 
 let currentIndex = 0;
 
-let currentSlide = itemDOMElements[currentIndex]
-currentSlide.classList.add("active")
+let currentImg = imgDOMElements[currentIndex];
+let currentTitle = titleDOMElements [currentIndex];
+let currentText = textDOMElements [currentIndex];
+currentImg.classList.add("active");
+currentTitle.classList.add("active");
+currentText.classList.add("active");
 
 const btnTop = document.querySelector(".btn-up");
 const btnBottom = document.querySelector(".btn-down");
 
 // btnTop.addEventListener("click,", function(){
-// 	 const nextSlideElement = itemDOMElements[currentIndex + 1]
+// 	 const nextSlideElement = imgDOMElements[currentIndex + 1]
 
 // 	 if (nextSlideElement) {
-// 	 	const activeSlideElement = itemDOMElements[currentIndex]
+// 	 	const activeSlideElement = imgDOMElements[currentIndex]
 // 	 	activeSlideElement.classList.remove('active')
 // 	 	nextSlideElement.classList.add('active')
 // 	 	currentIndex++
@@ -68,13 +74,21 @@ const btnBottom = document.querySelector(".btn-down");
 // })
 
  btnTop.addEventListener("click", function () {
-     itemDOMElements[currentIndex].classList.remove("active");
+     imgDOMElements[currentIndex].classList.remove("active");
+	 titleDOMElements [currentIndex].classList.remove("active")
+	 textDOMElements [currentIndex].classList.remove("active")
      currentIndex++;
-     itemDOMElements[currentIndex].classList.add("active");
+     imgDOMElements[currentIndex].classList.add("active");
+	 titleDOMElements [currentIndex].classList.add("active");
+	 textDOMElements [currentIndex].classList.add("active");
  })
 
  btnBottom.addEventListener("click", function () {
-     itemDOMElements[currentIndex].classList.remove("active");
+	imgDOMElements[currentIndex].classList.remove("active");
+	titleDOMElements [currentIndex].classList.remove("active")
+	textDOMElements [currentIndex].classList.remove("active")
      currentIndex--;
-     itemDOMElements[currentIndex].classList.add("active");
+     imgDOMElements[currentIndex].classList.add("active");
+	 titleDOMElements [currentIndex].classList.add("active");
+	 textDOMElements [currentIndex].classList.add("active");
  })
